@@ -56,10 +56,12 @@ INSTALLED_APPS = [
     # iternal
     'api',
     'integrations',
+    'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
@@ -156,6 +158,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT = os.path.join(BASE_DIR, '/home/imeiuz/projects/imeiapi/static')
 STATICFILES_DIRS = [BASE_DIR / "/home/imeiuz/projects/imeiapi/staticfiles"]
 MEDIA_URL = 'media/'
