@@ -151,7 +151,7 @@ class BuyumInfo(models.Model):
     shaxs_turi = models.CharField(max_length=10, choices=SHAXS_TURI)
     jismoniy_shaxs = models.ForeignKey(JismoniyShaxs, on_delete=models.SET_NULL, null=True, blank=True)
     yuridik_shaxs = models.ForeignKey(YuridikShaxs, on_delete=models.SET_NULL, null=True, blank=True)
-    xususiyatlari = models.CharField(max_length=255, blank=True, null=True)
+    xususiyatlari = models.ForeignKey(Xususiyatlari, on_delete=models.CASCADE)
     ishlab_chiqarilgan_yili = models.CharField(max_length=4)
 
     def clean(self):
