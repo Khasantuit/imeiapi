@@ -58,8 +58,8 @@ ROOT_URLCONF = 'config.urls'
 # Ruxsat bermoq
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framew  ork.permissions.IsAuthenticated'
-    ]
+        'rest_framework.permissions.IsAuthenticated',
+    ],
 }
 
 JAZZMIN_SETTINGS = {
